@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #info-box {
+            display: none; /* Hidden by default */
+            width: 300px; /* Width of the info box */
+            height: auto; /* Height of the info box */
+            background-color: #f8f8f8; /* Light gray background */
+            border: 1px solid #ccc; /* Border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 10px; /* Padding inside the box */
+            margin: 20px auto; /* Center the box */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow */
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+        }
+        .button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="w-full">
+    <h1 class="text-center text-lg font-bold">Our Locations</h1>
+    <div class="relative w-full px-20 py-10">
+        <!-- Google Maps iframe -->
+        <iframe class="w-full h-[450px] border-0 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+            src="https://www.google.com/maps/d/embed?mid=1aN4wfqRRSSu0lMDUjrjOUSirBaN00MM&hl=en&ehbc=2E312F" width="640"
+            height="480"></iframe>
+    </div>
+
+    <!-- Box to display information -->
+    <div id="info-box">
+        <h2 id="location-title" class="text-lg font-bold"></h2>
+        <p id="location-description" class="text-gray-700 mt-2"></p>
+    </div>
+
+    <!-- Simulated buttons for each pinned location -->
+    <div class="text-center mt-5">
+        <button class="button" onclick="showInfo('New York Office', 'This is our main office located in New York City.')">Location 1: New York</button>
+        <button class="button" onclick="showInfo('San Francisco Office', 'Our west coast office located in San Francisco.')">Location 2: San Francisco</button>
+        <button class="button" onclick="showInfo('Los Angeles Office', 'This is our office located in Los Angeles, California.')">Location 3: Los Angeles</button>
+        <button class="button" onclick="showInfo('Chicago Office', 'Our midwest office located in Chicago, Illinois.')">Location 4: Chicago</button>
+    </div>
+</div>
+
+<script>
+    // Function to display information based on the clicked location button
+    function showInfo(title, description) {
+        // Make the info-box visible
+        document.getElementById('info-box').style.display = 'block';
+
+        // Set the title and description
+        document.getElementById('location-title').innerText = title;
+        document.getElementById('location-description').innerText = description;
+    }
+</script>
+
+</body>
+</html>
